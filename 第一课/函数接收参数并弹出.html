@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <title>函数接收参数并弹出</title>
+    <style>
+        .center{
+            width:500px;
+            margin:10px auto;
+            text-align:center;
+            padding: 0%;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var para = document.getElementsByTagName("input");
+            var SubmitPara = document.getElementById("submit");
+            SubmitPara.onclick = function(){
+                alert(para[0].value);
+                alert(para[1].value);
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <h2 style = "text-align: center;">函数接收参数并弹出</h2>
+        <p style = "text-align: center;">点击提交传递参数</p>
+        <div class = "center">
+            <input type = "text" value="明月几时有"><br><br>
+            <input type = "text" value="把酒问青天">
+        </div>
+        <div class = "center">
+            <button id="submit">提交</button>
+        </div>
+    </body>
+</html>

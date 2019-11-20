@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <title>网页换肤</title>
+        <style>
+            .center{
+                width:500px;
+                margin:10px auto;
+                padding:0;
+                text-align:center;
+            }
+        </style>
+        <script>
+            function ChangeSkin(color){
+                switch(color){
+                    case 0:
+                        document.getElementById("Skin").href = "CSS/red.css";
+                        break;
+                    case 1:
+                        document.getElementById("Skin").href = "CSS/green.css";
+                        break;
+                    case 2:
+                        document.getElementById("Skin").href = "CSS/blue.css";
+                        break;
+                    case 3:
+                        document.getElementById("Skin").href = "CSS/gray.css";
+                        break;
+                }
+            }
+        </script>
+        <link id = "Skin" rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class = "center">
+            <h2 style = "text-align: center;">网页换肤</h2>
+            <p style = "text-align: center;">点击按钮切换网页皮肤</p>   
+            <button type = "button" onclick = "ChangeSkin(0)">红色皮肤</button>
+            <button type = "button" onclick = "ChangeSkin(1)">绿色皮肤</button>
+            <button type = "button" onclick = "ChangeSkin(2)">蓝色皮肤</button>
+            <button type = "button" onclick = "ChangeSkin(3)">灰色皮肤</button>
+        </div>
+    </body>
+</html>
