@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>点击Div，显示其innerHTML</title>
+
+        <style>
+            #center{
+                padding: 0%;
+                margin:0 auto;
+                width: 600px;
+                text-align:center;
+            }
+            #news{
+                width: 600px;
+                text-align:center;
+                border:1px solid rgb(200, 100, 100);
+                margin-top:20px;
+                cursor:pointer;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var news = document.getElementById("center").getElementsByTagName("div");
+                // ????var news = document.getElementsByClassName("center").getElementsByTagName("div");
+                // console.log(news);
+                for(var i = 0; i < news.length; i++){
+                    news[i].onclick = function (){
+                        alert(this.innerHTML);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id = "center">
+            <h2>点击Div，显示其innerHTML</h2>
+            <div id = "news">
+                <strong>美国会在香港问题上玩弄双重标准是错打算盘</strong><br>
+                <p>美国政客的双重标准，简单说就是对自己、盟国和利益相关方百般纵容包庇，而对于所谓“异己国家、地区”以及与其核心利益不相关的国家、地区百般指责、横加制裁。近期，西班牙、英国、智利等均因各种原因发生骚乱，美国政客或谴责暴力，或呼吁严惩骚乱分子。而对于持续施暴5个多月、烈度有增无减的香港激进暴力犯罪分子，政客们不仅不谴责，反而说是“一道美丽的风景线”，赋予暴徒们各种标榜正义、美好的形容词，给他们的暴行披上各种高尚的道德外衣。而通过所谓的“香港人权与民主法案”，更是这种双重标准的登峰造极之作。
+                </p>
+            </div>
+            <div id = "news">
+                <strong>凝聚压倒性正能量与一切反中乱港势力做最坚决的斗争</strong><br>
+                <p>反中乱港势力组织、发动的暴力活动已经持续5个多月了，其行为严重践踏法治和社会秩序，严重破坏香港繁荣稳定，严重挑战“一国两制”原则底线，已经将香港推到了极为危险的境地。在此紧迫时刻，所有爱国爱港者更应进一步发挥中流砥柱作用，团结广大香港市民，按照习近平主席近期就香港当前局势发表的重要讲话精神，止暴制乱、恢复秩序，与妄图把香港拉入深渊的一切破坏势力做坚决的斗争。
+                </p>
+            </div>
+            <div id = "news">
+                <strong>国家统计局修订2018年GDP初步核算数</strong><br>
+                <p>新华社北京11月22日电（记者陈炜伟）国家统计局22日发布消息，依据我国国内生产总值（GDP）核算制度和第四次全国经济普查结果，国家统计局对2018年GDP初步核算数进行了修订。主要结果为：2018年GDP为919281亿元，比初步核算数增加18972亿元，增幅为2.1%。
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
