@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="utf-8">
-    <title>控制div属性</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>控制div属性</title>
 </head>
     <style>
         .center{
             width:500px;
-            margin:10px auto;
-            padding:0;
+            margin:50px auto;
             text-align:center;
         }
-        .rectangle{
+        #rectangle{
             width:100px;
-            height: 100px;
+            height:100px;
             background-color: rgb(0, 255, 255);
-            margin:20px auto;
+            margin:50px auto;
             display:block;
         }
     </style>
@@ -59,15 +58,15 @@
     </script>
 
 <body>
-    <h2 style = "text-align: center;">控制div属性样例</h2>
-    <p style = "text-align: center;">点击不同按钮变换矩形</p>
     <div class = "center" >
+        <h2>控制div属性样例</h2>
+        <p>点击不同按钮变换矩形</p>
         <button type="button" onclick="width()" id = "width">变宽</button>
         <button type="button" onclick="height()" id = "height">变高</button>
         <button type="button" onclick="color()" id = "color">变红</button>
         <button type="button" onclick="show()" id = "show">隐藏</button>
         <button type="button" onclick="reset()" id = "reset">重置</button>
     </div>
-    <div class = "rectangle" id = "rectangle" ></div>
+    <div id = "rectangle" ></div>
 </body>
 </html>

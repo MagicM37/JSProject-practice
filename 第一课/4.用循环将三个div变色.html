@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh">
 	<head>
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>用循环将三个div变色</title>
-
 		<style>
-			.center{
-				width: 500px;
-				margin:10px auto;
-            	padding: 0%;
-				text-align:center;
-			}
+            .center{
+                width:500px;
+                margin:50px auto;
+                text-align:center;
+            }
 			.rectangle{
             width:100px;
             height: 100px;
@@ -19,7 +17,6 @@
             display:block;
         }
 		</style>
-		
 		<script>
 			window.onload = function(){
 				var DivNum = document.getElementsByClassName("rectangle");
@@ -32,11 +29,10 @@
 			}
 		</script>
 	</head>
-
 	<body>
-		<h2 style = "text-align: center;">用循环将三个div变色</h2>
-		<p style = "text-align: center;">点击按钮改变颜色</p>
 		<div class = "center">
+			<h2>用循环将三个div变色</h2>
+			<p>点击按钮改变颜色</p>
 			<button type="button" id="submit">更改</button>
 			<div class="rectangle"></div>
 			<div class="rectangle"></div>
