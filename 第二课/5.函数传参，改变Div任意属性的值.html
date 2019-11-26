@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>函数传参，改变Div任意属性的值</title>
+        <style>
+            div,span{
+                margin:15px;
+            }
+            .center{
+                width:500px;
+                margin:50px auto;
+                text-align:center;
+            }
+            #rectangle{
+                width:100px;
+                height:100px;
+                background: rgb(0, 255, 255);
+                margin:20px auto;
+                display:block;
+        }
+        </style>
+        <script>
+            window.onload = function(){
+                var mClick = document.getElementsByTagName("button")[0];
+                var mRset = document.getElementsByTagName("button")[1];
+                var rectangle = document.getElementById("rectangle");
+                mClick.onclick = function(){
+                    var mAttr = document.getElementById("attr").value;
+                    var mPara = document.getElementById("para").value;
+                    rectangle.style[mAttr] = mPara;
+                    // console.log(rectangle.style[mAttr]);
+                }
+                mRset.onclick = function(){
+                    rectangle.removeAttribute("style")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "center">
+            <h2>函数传参，改变Div任意属性的值</h2>
+            <p>输入相关参数，改变方块属性</p>
+            <div>属性名: <input type="text" id = "attr" value="background"/></div>
+            <div>参数值: <input type="text" id = "para" value="rgb(200, 100, 100)"/></div>
+            <div><span><button>更改</button></span><span><button>重置</button></span></div>
+            <div id = "rectangle"></div>
+        </div>
+    </body>
+</html>
