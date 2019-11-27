@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>简易JS年历</title>
+        <style>
+            .tittle{
+                width: 500px;
+                margin: 50px auto;
+                text-align: center;
+            }
+            .calendar{
+                margin: 0 auto;
+                padding: 0;
+                width: 400px;
+                border: 2px;
+                border-style: solid;
+                border-color: rgb(200, 100, 100);
+                overflow:hidden;
+                zoom:1;
+            }
+            ul{
+                list-style-type: none;
+                text-decoration: none;
+                margin: 5px auto;
+                padding: 5px;
+                width: 390px;
+                text-align: center;
+                overflow:hidden;
+                zoom:1;
+            }
+            li{
+                text-align: center;
+                margin: 5px;
+                display:inline-block;
+                width: 50px;
+                height: 60px;
+                color: aliceblue;
+                background: rgb(200, 100, 100);
+                border: 1px;
+                border-style: solid;
+                border-color: rgb(200, 100, 100);
+                padding: 15px;
+                cursor:pointer;
+            }
+            li.select{
+                color: rgb(200, 100, 100);
+                background: white;
+                border-color: rgb(200, 100, 100);
+            }
+            .msg{
+                margin: 15px;
+                padding: 10px;
+                width: 350px;
+                background: rgba(207, 207, 207, 0.404);
+            }
+        </style>
+        <script>
+            window.onload = function(){
+               var mSelect = document.getElementsByTagName("li");
+               var mMonth = document.getElementById("month");
+               var mContent = document.getElementById("content");
+               var mArray = [
+		            "春节：1月24日至30日-放假7天",
+		            "元宵节：2月8日-不放假",
+		            "妇女节：3月8日妇女节-不放假",
+		            "清明节：4月4日至6日-放假3天",
+		            "劳动节：5月1日至5日-放假5天",
+		            "端午节：6月25日至37日-放假3天",
+		            "小暑：7月6日-不放假",
+		            "七夕节：8月25日-不放假",
+		            "教师节：9月10日-不放假",
+		            "国庆节：10月1日至7日-放假7天",
+		            "立冬：11月7日-不放假",
+		            "圣诞节:12月25日-不放假"
+	            ];
+               for(var i = 0; i < 12; i++){
+                    mSelect[i].num = i;
+                    mSelect[i].onmouseover = function(){
+                        // console.log("鼠标移入");
+                        for(var j = 0; j < 12; j++){
+                            mSelect[j].className = "";
+                        }
+                        this.className = "select";
+                        mMonth.innerHTML = this.num + 1;
+                        mContent.innerHTML = mArray[this.num];
+                    }
+               }
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "tittle">
+            <h2>简易JS年历</h2>
+            <p>简易JS年历月份展示</p>
+        </div>
+        <div class="calendar">
+            <ul>
+                <li class = "select"><strong style="font-size: xx-large;">1</strong> JAN</li>
+                <li><strong style="font-size: xx-large;">2</strong> FER</li>
+                <li><strong style="font-size: xx-large;">3</strong> MAR</li>
+                <li><strong style="font-size: xx-large;">4</strong> APR</li>
+                <li><strong style="font-size: xx-large;">5</strong> MAY</li>
+                <li><strong style="font-size: xx-large;">6</strong> JUN</li>
+                <li><strong style="font-size: xx-large;">7</strong> JUL</li>
+                <li><strong style="font-size: xx-large;">8</strong> AUG</li>
+                <li><strong style="font-size: xx-large;">9</strong> SEP</li>
+                <li><strong style="font-size: xx-large;">10</strong> OCT</li>
+                <li><strong style="font-size: xx-large;">11</strong> NOV</li>
+                <li><strong style="font-size: xx-large;">12</strong> DEC</li>
+            </ul>
+            <div class="msg">
+                <h2>
+                    <strong id="month">1</strong>月节日
+                </h2>
+                <p id="content">春节：1月24日至30日-放假7天</p>
+            </div>
+        </div>
+    </body>
+</html>
