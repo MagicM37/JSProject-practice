@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang = "zh">
+    <head>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
+        <title>提示框效果</title>
+        <style>
+            .center{
+                width          : 680px;
+                margin         : 50px auto;
+                text-align     : center;
+            }
+            .show{
+                width          : 680px;
+                border         : 2px solid rgb(200, 100, 100);
+                padding        : 10px;
+            }
+            ul{
+                list-style-type: none; /* 取消列表前的点 */
+                cursor         : pointer; /* 改变鼠标样式 */
+                margin         : 0;
+                padding        : 0;
+                width          : 680px;
+                zoom           : 1;
+            }
+            li{
+                display        : inline-block;
+                text-align     : left;
+                padding        : 0;
+                margin         : 0;
+            }
+            li a{
+                text-decoration: none; /* 删除下划线 */
+                display        : inline-block; /* 改变li a形状 */
+                width          : 100px;
+                height         : 100px;
+                border         : 1px solid rgb(200, 100, 100);
+                margin         : 5px;
+                padding        : 10px;
+                color          : rgb(200, 100, 100);
+            }
+            img{
+                display        : none;
+                position       : absolute;
+                border         : 1px solid rgb(200, 100, 100);                
+            }
+            .zindex{
+                z-index        : 1;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var mLi  = document.getElementsByTagName("li");
+                var mA   = document.getElementsByTagName("a");
+                var mImg = document.getElementsByTagName("img");
+                for(var i = 0; i < 10; i++){
+                    mA[i].num = i;
+                    mA[i].onmouseover = function(){
+                       
+                        mImg[this.num].style.display = "block";
+                        mLi[this.num].className      = "zindex";
+                    }
+                    mA[i].onmouseout = function ()
+                    {
+                        mLi[this.num].className      = "";
+                        mImg[this.num].style.display = "none"
+                    };
+                    mImg[i].onmouseover = function()
+                    {
+                        mLi[this.num].className = "zindex";
+                        this.style.display      = "block"	
+                    };
+                    mImg[i].onmouseout = function()
+                    {
+                        mLi[this.num].className = "";
+                        this.style.display      = "none"	
+                    }		
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "center">
+            <h2>提示框效果</h2>
+            <p>鼠标滑过显示提示框</p>
+            <div class="show">
+                <h3 style = "color: rgb(200, 100, 100);">车标展示</h3>
+                <ul>
+                    <li>
+                        <a href="javascript:;" title="BMW 宝马汽车"><strong>BMW</strong><br />宝马汽车</a>
+                        <img src="images/图片列表/1.jpg" alt="BMW 宝马汽车" />
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Alfa Romeo 阿尔法-罗米欧"><strong>Alfa Romeo</strong><br />阿尔法罗米欧</a>
+                        <img src="images/图片列表/2.jpg" alt="Alfa Romeo 阿尔法-罗米欧" />
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Skoda 斯柯达"><strong>Skoda</strong><br />斯柯达</a>
+                        <img src="images/图片列表/3.jpg" alt="Skoda 斯柯达" />
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Volkswagen 大众汽车"><strong>Volkswagen</strong><br />大众汽车</a>
+                        <img src="images/图片列表/4.jpg" alt="Volkswagen 大众汽车" />
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Saab 萨布牌轿"><strong>Saab</strong><br />萨布牌轿车</a>
+                        <img src="images/图片列表/5.jpg" alt="Saab 萨布牌轿" />
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Lamborghini 兰博基尼"><strong>Lamborghini</strong><br />兰博基尼</a>
+                        <img src="images/图片列表/6.jpg" alt="Lamborghini 兰博基尼" />
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Porsche 保时捷"><strong>Porsche</strong><br />保时捷</a>
+                        <img src="images/图片列表/7.jpg" alt="Porsche 保时捷" />
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Peugeot 标致"><strong>Peugeot</strong><br />标致</a>
+                        <img src="images/图片列表/8.jpg" alt="Peugeot 标致" />
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Mercedes 梅赛德斯 奔驰"><strong>Mercedes</strong><br />梅赛德斯奔驰</a>
+                        <img src="images/图片列表/9.jpg" alt="Mercedes1 梅赛德斯 奔驰" />
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Buick 别克汽车"><strong>Buick</strong><br />别克汽车</a>
+                        <img src="images/图片列表/10.jpg" alt="Buick 别克汽车" />
+                    </li>
+                </ul>
+            </div>
+            </p>
+        </div>
+    </body>
+</html>
