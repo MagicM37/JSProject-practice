@@ -1,54 +1,54 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang = "zh">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
         <title>百度输入法</title>
 
         <style>
             .center{
-                width:500px;
-                margin:50px auto;
-                text-align:center;
+                width          : 500px;
+                margin         : 50px auto;
+                text-align     : center;
             }
             body,ul,li,button{
-                margin:0;
-                padding:0;
-                margin:0 auto;
+                margin         : 0;
+                padding        : 0;
+                margin         : 0 auto;
             }
             #menu{
-                display:none;
-                border:1px solid rgb(200, 100, 100);
-                margin-top:20px;
-                width: 50px;
-                margin:auto;
+                display        : none;
+                border         : 1px solid rgb(200, 100, 100);
+                margin-top     : 20px;
+                width          : 50px;
+                margin         : auto;
             }
             ul{
-                list-style-type:none;
+                list-style-type: none;
             }
             li a{
-                width:100%;
-                line-height:24px;
-                display:inline-block;
-                vertical-align:top;
-                text-decoration:none;
-                color:black;
+                width          : 100%;
+                line-height    : 24px;
+                display        : inline-block;
+                vertical-align : top;
+                text-decoration: none;
+                color          : black;
             }
             li a:hover{
-                background:rgb(180, 120, 120);
-                color: aliceblue;;
+                background     : rgb(180, 120, 120);
+                color          : aliceblue;;
             }
             #close{
-                border-top:1px solid rgb(200, 120, 120);
+                border-top     : 1px solid rgb(200, 120, 120);
             }
         </style>
         <script>
             window.onload = function(){
                 var MenuButton = document.getElementById("MenuButton");
-                var menu = document.getElementById("menu");
+                var menu       = document.getElementById("menu");
+                var close      = document.getElementById("close");
                 MenuButton.onclick = function(){
                     menu.style.display = (menu.style.display == "block")? "none" : "block";
                 }
-                var close = document.getElementById("close");
                 close.onclick = function(){
                     menu.style.display = "none";
                 }
@@ -56,14 +56,14 @@
         </script>
     </head>
     <body>
-        <div class="center">
+        <div class = "center">
             <h2>百度输入法</h2>
             <p>点击按钮展示菜单</p>
-            <button type="button" id="MenuButton">输入法</button>
-            <ul id="menu" >
-                <li><a href="javascript:;">手写</a></li>
-                <li><a href="javascript:;">拼音</a></li>
-                <li id="close"><a href="javascript:;">关闭</a></li>
+            <button type = "button" id = "MenuButton">输入法</button>
+            <ul id = "menu" >
+                <li><a href = "javascript: ;">手写</a></li>
+                <li><a href = "javascript: ;">拼音</a></li>
+                <li id = "close"><a href = "javascript: ;">关闭</a></li>
             </ul>
         </div>
     </body>

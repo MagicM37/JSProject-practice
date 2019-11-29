@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang = "zh">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
         <title>记住密码提示框</title>
         <style>
             .center{
-                width:500px;
-                margin:50px auto;
-                text-align:center;
+                width           : 500px;
+                margin          : 50px auto;
+                text-align      : center;
             }
             #tips{
-                padding:1px;
+                padding         : 1px;
                 background-color: rgb(200, 100, 100);
-                display:none;
-                color: aliceblue;
+                display         : none;
+                color           : aliceblue;
             }
         </style>
         <script>
             window.onload = function(){
                 var trigger = document.getElementsByTagName("label")[0];
-                var tips = document.getElementById("tips");
+                var tips    = document.getElementById("tips");
                 trigger.onmouseover = function(){
                     tips.style.display = "block";
                 }
@@ -31,16 +31,16 @@
     </head>
 
     <body>
-        <div class="center">
+        <div class = "center">
             <h2>记住密码提示框</h2>
             <p>鼠标悬浮在选项上出现提示框</p>
-            <div style="margin: 25px;">
+            <div style = "margin: 25px;">
                 <p>方法一：title标签实现</p>
-                <p title="为了您的信息安全，请不要在网吧或公用电脑上使用此功能！"><input type="checkbox" >记住密码</p>
+                <p title = "为了您的信息安全，请不要在网吧或公用电脑上使用此功能！"><input type = "checkbox" >记住密码</p>
             </div>
-            <div style="margin: 25px;">
+            <div style = "margin: 25px;">
                 <p>方法二：onmouseover监听事件实现</p>
-                <label id = "trigger"><input type="checkbox">记住密码</label>
+                <label id = "trigger"><input type = "checkbox">记住密码</label>
                 <div id = "tips">
                     <P>为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</P>
                 </div>

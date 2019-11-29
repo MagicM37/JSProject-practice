@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang = "zh">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
         <title>函数接收参数并弹出</title>
         <style>
             .center{
-                width:500px;
-                margin:50px auto;
-                text-align:center;
+                width     : 500px;
+                margin    : 50px auto;
+                text-align: center;
             }
         </style>
     <script>
         window.onload = function(){
-            var para = document.getElementsByTagName("input");
+            var para       = document.getElementsByTagName("input");
             var SubmitPara = document.getElementById("submit");
             SubmitPara.onclick = function(){
                 alert(para[0].value);
@@ -25,10 +25,10 @@
         <div class = "center">
             <h2>函数接收参数并弹出</h2>
             <p>点击提交传递参数</p>
-            <input type = "text" value="明月几时有"><br><br>
-            <input type = "text" value="把酒问青天">
-            <div style="padding: 25px;">
-                <button id="submit">提交</button>
+            <input type = "text" value = "明月几时有"><br><br>
+            <input type = "text" value = "把酒问青天">
+            <div style = "padding: 25px;">
+                <button id = "submit">提交</button>
             </div>
         </div>
     </body>

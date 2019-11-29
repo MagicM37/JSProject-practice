@@ -1,58 +1,58 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang = "zh">
 <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>控制div属性</title>
+    <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
+    <title>控制div属性</title>
 </head>
     <style>
         .center{
-            width:500px;
-            margin:50px auto;
-            text-align:center;
+            width           : 500px;
+            margin          : 50px auto;
+            text-align      : center;
         }
         #rectangle{
-            width:100px;
-            height:100px;
+            width           : 100px;
+            height          : 100px;
             background-color: rgb(0, 255, 255);
-            margin:50px auto;
-            display:block;
+            margin          : 50px auto;
+            display         : block;
         }
     </style>
     
     <script>
         function width(){
-            var x = document.getElementById("rectangle");
-            var xwidth =  window.getComputedStyle(x,null).width;
+            var x      = document.getElementById("rectangle");
+            var xwidth = window.getComputedStyle(x,null).width;
             // console.log(xwidth);
-            x.style.width = (xwidth == "100px") ? "300px" : "100px";
-            document.getElementById("width").innerHTML = (x.style.width == "100px") ? "变宽" : "变窄";
+            x.style.width = (xwidth == "100px") ? "300px": "100px";
+            document.getElementById("width").innerHTML = (x.style.width == "100px") ? "变宽": "变窄";
             
         }
         function height(){
-            var x = document.getElementById("rectangle");
-            var xheight =  window.getComputedStyle(x,null).height;
-            x.style.height = (xheight == "100px") ? "300px" : "100px";
-            document.getElementById("height").innerHTML = (x.style.height == "100px") ? "变高" : "变矮";
+            var x       = document.getElementById("rectangle");
+            var xheight = window.getComputedStyle(x,null).height;
+            x.style.height = (xheight == "100px") ? "300px": "100px";
+            document.getElementById("height").innerHTML = (x.style.height == "100px") ? "变高": "变矮";
         }
         function color(){
-            var x = document.getElementById("rectangle");
+            var x      = document.getElementById("rectangle");
             var xcolor = window.getComputedStyle(x,null).getPropertyValue("background-color");
             // console.log(xcolor);
-            x.style.background = (xcolor == "rgb(0, 255, 255)") ? "rgb(200, 100, 100)" : "rgb(0, 255, 255)";
+            x.style.background = (xcolor == "rgb(0, 255, 255)") ? "rgb(200, 100, 100)": "rgb(0, 255, 255)";
             // console.log(x.style.background);
             document.getElementById("color").innerHTML = (x.style.background-color == "rgb(0, 255, 255)") ? "变红" : "变蓝";
         }
         function show(){
-            var x = document.getElementById("rectangle");
-            var xshow =  window.getComputedStyle(x,null).display;
-            x.style.display = (xshow == "block") ? "none" : "block";
+            var x     = document.getElementById("rectangle");
+            var xshow = window.getComputedStyle(x,null).display;
+            x.style.display = (xshow == "block") ? "none": "block";
             document.getElementById("show").innerHTML = (x.style.display == "block") ? "隐藏" : "显示";
         }
         function reset(){
             var x = document.getElementById("rectangle");
-            x.style.display = "block";
-            x.style.width = "100px";
-            x.style.height = "100px";
+            x.style.display    = "block";
+            x.style.width      = "100px";
+            x.style.height     = "100px";
             x.style.background = "rgb(0, 255, 255)";
         }
     </script>
@@ -61,11 +61,11 @@
     <div class = "center" >
         <h2>控制div属性样例</h2>
         <p>点击不同按钮变换矩形</p>
-        <button type="button" onclick="width()" id = "width">变宽</button>
-        <button type="button" onclick="height()" id = "height">变高</button>
-        <button type="button" onclick="color()" id = "color">变红</button>
-        <button type="button" onclick="show()" id = "show">隐藏</button>
-        <button type="button" onclick="reset()" id = "reset">重置</button>
+        <button type = "button" onclick = "width()" id  = "width">变宽</button>
+        <button type = "button" onclick = "height()" id = "height">变高</button>
+        <button type = "button" onclick = "color()" id  = "color">变红</button>
+        <button type = "button" onclick = "show()" id   = "show">隐藏</button>
+        <button type = "button" onclick = "reset()" id  = "reset">重置</button>
     </div>
     <div id = "rectangle" ></div>
 </body>
