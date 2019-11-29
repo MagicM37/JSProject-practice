@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang = "zh">
+    <head>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
+        <title>复选框的全选、全不选与返选</title>
+        <style>
+            .center{
+                width          : 500px;
+                margin         : 50px auto;
+                text-align     : center;
+            }
+            .content{
+                text-align     : left;
+                margin         : 0 auto;
+                width          : 220px;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var mAll = document.getElementById("checkAll");
+                var mAllT = document.getElementById("checkAllTittle");
+                var mInvert = document.getElementById("checkInvert");
+                var mCheck = document.getElementById("checkForm").getElementsByTagName("input");
+                // 全选、全不选文字判定
+                var mAllStatus = function(){
+                    for(var i = 0, j = 0; i < mCheck.length; i++){
+                        if(mCheck[i].checked)
+                            j++;  
+                    }
+                    mAllT.innerHTML = (j ==  mCheck.length) ? "全不选" : "全选";
+                    mAll.checked = (j ==  mCheck.length) ? true : false;
+                }
+                // 全选
+                mAll.onclick = function()
+                {
+                    for(var i = 0; i < mCheck.length; i++){
+                        mCheck[i].checked = this.checked;
+                    }
+                    mAllStatus();
+                }
+                // 反选
+                mInvert.onclick = function()
+                {
+                    for(var i = 0; i < mCheck.length; i++){
+                        mCheck[i].checked = !mCheck[i].checked;
+                    }
+                    mAllStatus();
+                }
+                // 根据改动更新状态
+                for (var i = 0; i < mCheck.length; i++){
+                    mCheck[i].onclick = function (){
+                        mAllStatus();
+                    }	
+                }	
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "center">
+            <h2>复选框的全选、全不选与返选</h2>
+            <p>1.切换全选/全不选文字</p>
+            <p>2.根据选中个数更新全选框状态</p>
+        </div>
+        <div class="content">
+            <input type = "checkbox" name = "" id = "checkAll"><label for = "checkAll" id = "checkAllTittle">全选</label>&nbsp;&nbsp;
+            <a href = "javascript: ;" id = "checkInvert">反选</a><br /><hr>
+            <form id="checkForm">
+                <input type = "checkbox" id = "1"><label for  = "1" form  = "checkForm">一往无前虎山行</label><br />
+                <input type = "checkbox" id = "2"><label for  = "2" form  = "checkForm">拨开云雾见光明</label><br />
+                <input type = "checkbox" id = "3"><label for  = "3" form  = "checkForm">梦里花开牡丹亭</label><br />
+                <input type = "checkbox" id = "4"><label for  = "4" form  = "checkForm">幻象成真歌舞升平</label><br /><br />
+                <input type = "checkbox" id = "5"><label for  = "5" form  = "checkForm">善人的包容是畜生的乐园</label><br />
+                <input type = "checkbox" id = "6"><label for  = "6" form  = "checkForm">我命都不要的人你跟我说钱</label><br />
+                <input type = "checkbox" id = "7"><label for  = "7" form  = "checkForm">每个人都会有自己的底线</label><br />
+                <input type = "checkbox" id = "8"><label for  = "8" form  = "checkForm">你不让我开心我不让你过年</label><br /><br />
+                <input type = "checkbox" id = "9"><label for  = "9" form  = "checkForm">你既然不是仙</label><br />
+                <input type = "checkbox" id = "10"><label for = "10" form = "checkForm">难免有杂念</label><br />
+                <input type = "checkbox" id = "11"><label for = "11" form = "checkForm">道义放两旁</label><br />
+                <input type = "checkbox" id = "12"><label for = "12" form = "checkForm">把利字摆中间</label><br />
+            </form>
+        </div>
+    </body>
+</html>
