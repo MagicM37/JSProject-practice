@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "zh">
+    <head>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
+        <title>用typeof查看数据类型</title>
+        <style>
+            .center{
+                width          : 500px;
+                margin         : 50px auto;
+                text-align     : center;
+            }
+            ul{
+                list-style-type: none; /* 取消列表前的点 */
+                margin         : 0 auto;
+                padding        : 10px;
+                width          : 300px;
+                text-align     : left;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var mOutput = document.getElementById("output");
+                mOutput.innerHTML = "<li>john的类型为：" + typeof "john" + 
+                                    "</li><li>3.14的类型为：" + typeof 3.14 +
+                                    "</li><li>false的类型为：" + typeof false +
+                                    "</li><li>[1,2,3,4]的类型为：" + typeof [1,2,3,4] +
+                                    "</li><li>{name:'john', age:34}的类型为：" + typeof {name:'john', age:34} +  "</li>";
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "center">
+            <h2>用typeof查看数据类型</h2>
+            <p>typeof 操作符返回变量或表达式的类型</p>
+            <ul id = "output">
+            </ul>
+        </div>
+    </body>
+</html>
