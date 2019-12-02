@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "zh">
+    <head>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
+        <title>页面加载后累加，自加一</title>
+        <style>
+            .center{
+                width     : 500px;
+                margin    : 50px auto;
+                text-align: center;
+            }
+        </style>
+        <script>
+            // setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式
+            // setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭
+            // 由 setInterval() 返回的 ID 值可用作 clearInterval() 方法的参数
+            window.onload = function(){
+                var mButton = document.getElementsByTagName("button");
+                setInterval(fun, 1000);
+                function fun(){
+                    console.log("进入fun");
+                    mButton[0].innerHTML = (parseInt(mButton[0].innerHTML)+1);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "center">
+            <h2>页面加载后累加，自加一</h2>
+            <p>按钮自动加一</p>
+            <button>0</button>
+        </div>
+    </body>
+</html>

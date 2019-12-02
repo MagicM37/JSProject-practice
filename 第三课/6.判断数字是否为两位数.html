@@ -2,7 +2,7 @@
 <html lang = "zh">
     <head>
         <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
-        <title>用parseInt解析数字，并求和</title>
+        <title>判断数字是否为两位数</title>
         <style>
             .center{
                 width     : 500px;
@@ -16,11 +16,14 @@
                 var mButton = document.getElementsByTagName("button");
                 var mRes    = document.getElementById("res");
                 mButton[0].onclick = function(){
-                    if(mNum[0].value == "" || mNum[1].value == ""){
-                        mRes.innerHTML = "<strong>请输入数字</strong>" 
+                    if(mNum[0].value == ""){
+                        mRes.innerHTML = "<strong>请输入数字</strong>";
+                    }
+                    else if(mNum[0].value.length == 2){
+                        mRes.innerHTML = "<strong>该数字是两位数</strong>";
                     }
                     else{
-                        mRes.innerHTML = "答案为：<strong>" + (parseInt(mNum[0].value) + parseInt(mNum[1].value)) + "</strong>" ;
+                        mRes.innerHTML = "该数字为<strong>" + (parseInt(mNum[0].value.length)) + "位数</strong>" ;
                     }
                 }
             }
@@ -28,12 +31,11 @@
     </head>
     <body>
         <div class = "center">
-            <h2>用parseInt解析数字，并求和</h2>
-            <p>输入数字点击求和</p>
-            <input type = "text"><strong>&nbsp;&nbsp;+&nbsp;</strong>
+            <h2>判断数字是否为两位数</h2>
+            <p>输入数字后点击按钮得到答案</p>
             <input type = "text"><br /><br />
-            <button>求和</button><br /><br />
-            <p id = "res">输入数字点击求和按钮得到答案</p>
+            <button>是否为两位数</button><br /><br />
+            <p id = "res">输入数字后点击按钮得到答案</p>
         </div>
     </body>
 </html>

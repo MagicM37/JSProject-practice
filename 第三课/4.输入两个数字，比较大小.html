@@ -2,7 +2,7 @@
 <html lang = "zh">
     <head>
         <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
-        <title>用parseInt解析数字，并求和</title>
+        <title>输入两个数字，比较大小</title>
         <style>
             .center{
                 width     : 500px;
@@ -17,10 +17,13 @@
                 var mRes    = document.getElementById("res");
                 mButton[0].onclick = function(){
                     if(mNum[0].value == "" || mNum[1].value == ""){
-                        mRes.innerHTML = "<strong>请输入数字</strong>" 
+                        mRes.innerHTML = "<strong>请输入数字</strong>";
+                    }
+                    else if(mNum[0].value == mNum[1].value){
+                        mRes.innerHTML = "<strong>两数字相等</strong>";
                     }
                     else{
-                        mRes.innerHTML = "答案为：<strong>" + (parseInt(mNum[0].value) + parseInt(mNum[1].value)) + "</strong>" ;
+                        mRes.innerHTML = "较大数为：<strong>" + ((parseInt(mNum[0].value) > parseInt(mNum[1].value)) ? mNum[0].value : mNum[1].value) + "</strong>" ;
                     }
                 }
             }
@@ -28,12 +31,12 @@
     </head>
     <body>
         <div class = "center">
-            <h2>用parseInt解析数字，并求和</h2>
-            <p>输入数字点击求和</p>
-            <input type = "text"><strong>&nbsp;&nbsp;+&nbsp;</strong>
+            <h2>输入两个数字，比较大小</h2>
+            <p>输入两个数字后点击按钮得到较大数</p>
+            <input type = "text">&nbsp;&nbsp;与&nbsp;
             <input type = "text"><br /><br />
-            <button>求和</button><br /><br />
-            <p id = "res">输入数字点击求和按钮得到答案</p>
+            <button>比较</button><br /><br />
+            <p id = "res">输入数字点击比较按钮得到较大数</p>
         </div>
     </body>
 </html>

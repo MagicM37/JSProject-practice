@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang = "zh">
+    <head>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
+        <title>累加按钮，自加一</title>
+        <style>
+            .center{
+                width     : 500px;
+                margin    : 50px auto;
+                text-align: center;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var mButton = document.getElementsByTagName("button");
+                mButton[0].onclick = function(){
+                    mButton[0].innerHTML = (parseInt(mButton[0].innerHTML)+1);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "center">
+            <h2>累加按钮，自加一</h2>
+            <p>点击按钮加一</p>
+            <button>0</button>
+        </div>
+    </body>
+</html>
