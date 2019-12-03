@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "zh">
+    <head>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
+        <title>简易网页时钟</title>
+        <style>
+            .center{
+                width      : 500px;
+                margin     : 50px auto;
+                text-align : center;
+            }
+            .clock{
+                width      : 300px;
+                height     : 70px;
+                margin     : 0 auto;
+                padding    : 0;
+                background : rgb(200, 100, 100);
+            }
+            strong{
+                color      : aliceblue;
+                font-size  : xx-large;
+                line-height: 70px; /* 对单行文本进行垂直居中 */
+                
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var Clock = document.getElementsByTagName("span");
+                setInterval(getTime,1000);
+                getTime(); // 如果没有这一行，那么时钟会在网页加载1000毫秒后运行
+                function getTime(){
+                    var date = new Date();
+                    var time = [date.getHours(),date.getMinutes(),date.getSeconds()];
+                    for(var i = 0; i < 3; i++){
+                        Clock[i].innerHTML = format(time[i]);
+                    }
+                }
+                function format(str){
+                    return str.toString().replace(/^(\d)$/,"0$1");
+                    // /^(\d)$/
+                    // ^    开头位置
+                    // (\d) 一位数字
+                    // $    结束位置
+                    // $1指的就是符合你第一个括号里的正则的数据
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "center">
+            <h2>简易网页时钟</h2>
+            <div class="clock">
+                <strong><span></span>&nbsp;:&nbsp;<span></span>&nbsp;:&nbsp;<span></span></strong>
+            </div>
+        </div>
+    </body>
+</html>
