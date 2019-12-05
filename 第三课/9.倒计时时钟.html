@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang = "zh">
+    <head>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
+        <title>倒计时时钟</title>
+        <style>
+            .center{
+                width      : 500px;
+                margin     : 50px auto;
+                text-align : center;
+            }
+            .clock{
+                width      : 300px;
+                height     : 70px;
+                margin     : 10px auto;
+                padding    : 0;
+                background : rgb(200, 100, 100);
+            }
+            strong{
+                color      : aliceblue;
+                font-size  : xx-large;
+                line-height: 70px; /* 对单行文本进行垂直居中 */
+                
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var Clock = document.getElementsByTagName("span");
+                var Start = document.getElementsByTagName("button");
+                var Dida;
+                Start[0].onclick = function(){
+                    if(this.innerHTML == "暂停"){
+                        this.innerHTML = "继续";
+                        clearInterval(Dida);
+                    }
+                    else{
+                        this.innerHTML = "暂停";
+                        Dida = setInterval(Timer,1000);
+                    }
+                }
+                function Timer(){
+                    var time = parseInt(Clock[0].innerHTML.replace(/^0/,'')) * 60 + parseInt(Clock[1].innerHTML.replace(/^0/,''));
+                    if(time <= 0){
+                        clearInterval(Dida);
+                        return;
+                    }
+                    time--;
+                    Clock[0].innerHTML = format(parseInt(time/60));
+                    time  = time % 60;
+		            Clock[1].innerHTML = format(parseInt(time));
+                }
+                function format(str){
+                    return str.toString().replace(/^(\d)$/,"0$1");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "center">
+            <h2>倒计时时钟</h2>
+            <p>点击按钮开始倒计时</p>
+            <div class="clock">
+                <strong><span>01</span>&nbsp;:&nbsp;<span>30</span></strong>
+            </div>
+            <button>开始</button>
+        </div>
+    </body>
+</html>
