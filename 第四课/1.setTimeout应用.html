@@ -5,49 +5,74 @@
         <title>SetTimeout应用</title>
         <style>
             .center{
-                width      : 500px;
-                margin     : 50px auto;
-                text-align : center;
+                width          : 500px;
+                margin         : 50px auto;
+                text-align     : center;
             }
             ul{
-                list-style-type : none; /* 取消列表前的点 */
-                cursor          : pointer;
-                width           : 738px;
-                margin          : 0 auto;
-                padding         : 0;
-                background      : rgb(200, 100, 100);
-                
+                list-style-type: none; /* 取消列表前的点 */
+                cursor         : pointer;
+                width          : 738px;
+                margin         : 0 auto;
+                padding        : 0;
+                background     : rgb(200, 100, 100);
             }
             li{
-                padding         : 0;
-                margin          : 0;
-                display         : inline;
+                padding        : 0;
+                margin         : 0;
+                display        : inline;
             }
             li a{
-                font-size       : 20px;
-                color           : aliceblue;
-                border          : 1px solid rgb(200, 100, 100);
-                text-decoration : none; /* 删除下划线 */
-                display         : inline-block; /* 改变li a形状 */
-                padding         : 0;
-                width           : 80px;
-                margin: 2.5px 2.5px;
-                text-align : center;
+                font-size      : 20px;
+                color          : aliceblue;
+                border         : 1px solid rgb(200, 100, 100);
+                text-decoration: none; /* 删除下划线 */
+                display        : inline-block; /* 改变li a形状 */
+                padding        : 0;
+                width          : 80px;
+                margin         : 2.5px 2.5px;
+                text-align     : center;
             }
             li a:hover{
-                background      : white;
-                color           : rgb(200, 100, 100);
-                border          : 1px solid rgb(200, 100, 100);
+                background     : white;
+                color          : rgb(200, 100, 100);
+                border         : 1px solid rgb(200, 100, 100);
             }
             .menu{
-                margin     : 0 auto;
-                text-align : center;
-                color: rgb(200, 100, 100);
+                margin         : 0 auto;
+                text-align     : center;
+                display        : none;
+            }
+            .menu a{
+                color          : rgb(200, 100, 100);
+                text-decoration: none;
             }
         </style>
         <script>
             window.onload = function(){
-               
+                var mTittle = document.getElementsByTagName("li");
+                var mMenu   = document.getElementsByClassName("menu");
+                var mShow   = document.getElementById("show");
+                var select;
+                for(var i = 0; i < 8; i++){
+                    mTittle[i].num = i;
+                    mTittle[i].onmouseover = function(){
+                        for(var j = 0; j < mMenu.length; j++){
+                            mMenu[j].style.display = "none";
+                        }
+                        select = this.num;
+                        mMenu[select].style.display = "block";
+                        mShow.onmouseover = function (event){
+                            (event || window.event).cancelBubble = true;
+                            clearTimeout(timer);
+                        }
+                    }
+                    mShow.onmouseout = function(){
+                        timer = setTimeout(function () {
+                        mMenu[select].style.display = "none";
+                        },1000)	
+                    }
+                }
             }
         </script>
     </head>
@@ -56,72 +81,75 @@
             <h2>SetTimeout应用</h2>
             <p>扩展导航栏</p>
         </div>
-        <ul>
-            <li><a href="javascript:;">站长之家</a></li>
-            <li><a href="javascript:;">行业资讯</a></li>
-            <li><a href="javascript:;">站长在线</a></li>
-            <li><a href="javascript:;">网站运营</a></li>
-            <li><a href="javascript:;">设计在线</a></li>
-            <li><a href="javascript:;">网络编程</a></li>
-            <li><a href="javascript:;">联盟资讯</a></li>
-            <li><a href="javascript:;">服务器</a></li>
-        </ul>
-        <div class="menu">
-            <a href="javascript:;">业界动态</a> |
-            <a href="javascript:;">收购融资</a> |
-            <a href="javascript:;">门户动态</a> |
-            <a href="javascript:;">搜索引擎</a> |
-            <a href="javascript:;">网络游戏</a> |
-            <a href="javascript:;">电子商务</a> |
-            <a href="javascript:;">广告传媒</a> |
-            <a href="javascript:;">厂商开发</a>
-        </div>
-        <div class="menu">
-            <a href="javascript:;">站长报道</a> |
-            <a href="javascript:;">好站推荐</a> |
-            <a href="javascript:;">站长聚会</a> |
-            <a href="javascript:;">站长访谈</a> |
-            <a href="javascript:;">站长茶馆</a> |
-            <a href="javascript:;">网站排行</a>
-        </div>
-        <div class="menu">
-            <a href="javascript:;">建站经验</a> |
-            <a href="javascript:;">策划盈利</a> |
-            <a href="javascript:;">搜索优化</a> |
-            <a href="javascript:;">网站推广</a> |
-            <a href="javascript:;">免费资源</a>
-        </div>
-        <div class="menu">
-            <a href="javascript:;">酷站推荐</a> |
-            <a href="javascript:;">网页设计</a> |
-            <a href="javascript:;">WEB标准</a> |
-            <a href="javascript:;">视频处理</a> |
-            <a href="javascript:;">设计活动</a>
-        </div>
-        <div class="menu">
-            <a href="javascript:;">Asp编程</a> |
-            <a href="javascript:;">Php编程</a> |
-            <a href="javascript:;">.Net编程</a> |
-            <a href="javascript:;">Xml编程</a> |
-            <a href="javascript:;">Access</a> |
-            <a href="javascript:;">Mssql</a> |
-            <a href="javascript:;">Mysql</a>
-        </div>
-        <div class="menu">
-            <a href="javascript:;">联盟动态</a> |
-            <a href="javascript:;">联盟介绍</a> |
-            <a href="javascript:;">联盟点评</a> |
-            <a href="javascript:;">网赚技巧</a>
-        </div>
-        <div class="menu">
-            <a href="javascript:;">Web服务器</a> |
-            <a href="javascript:;">Ftp服务器</a> |
-            <a href="javascript:;">Mail服务器</a> |
-            <a href="javascript:;">Dns服务器</a> |
-            <a href="javascript:;">Win服务器</a> |
-            <a href="javascript:;">Linux服务器</a> |
-            <a href="javascript:;">安全防护</a> |
-            <a href="javascript:;">虚拟主机</a>
+        <div id = "show">
+            <ul>
+                <li><a href = "javascript: ;">站长之家</a></li>
+                <li><a href = "javascript: ;">行业资讯</a></li>
+                <li><a href = "javascript: ;">站长在线</a></li>
+                <li><a href = "javascript: ;">网站运营</a></li>
+                <li><a href = "javascript: ;">设计在线</a></li>
+                <li><a href = "javascript: ;">网络编程</a></li>
+                <li><a href = "javascript: ;">联盟资讯</a></li>
+                <li><a href = "javascript: ;">服务器</a></li>
+            </ul>
+            <div class = "menu"></div>
+            <div class = "menu">
+                <a href = "javascript: ;">业界动态</a> |
+                <a href = "javascript: ;">收购融资</a> |
+                <a href = "javascript: ;">门户动态</a> |
+                <a href = "javascript: ;">搜索引擎</a> |
+                <a href = "javascript: ;">网络游戏</a> |
+                <a href = "javascript: ;">电子商务</a> |
+                <a href = "javascript: ;">广告传媒</a> |
+                <a href = "javascript: ;">厂商开发</a>
+            </div>
+            <div class = "menu">
+                <a href = "javascript: ;">站长报道</a> |
+                <a href = "javascript: ;">好站推荐</a> |
+                <a href = "javascript: ;">站长聚会</a> |
+                <a href = "javascript: ;">站长访谈</a> |
+                <a href = "javascript: ;">站长茶馆</a> |
+                <a href = "javascript: ;">网站排行</a>
+            </div>
+            <div class = "menu">
+                <a href = "javascript: ;">建站经验</a> |
+                <a href = "javascript: ;">策划盈利</a> |
+                <a href = "javascript: ;">搜索优化</a> |
+                <a href = "javascript: ;">网站推广</a> |
+                <a href = "javascript: ;">免费资源</a>
+            </div>
+            <div class = "menu">
+                <a href = "javascript: ;">酷站推荐</a> |
+                <a href = "javascript: ;">网页设计</a> |
+                <a href = "javascript: ;">WEB标准</a> |
+                <a href = "javascript: ;">视频处理</a> |
+                <a href = "javascript: ;">设计活动</a>
+            </div>
+            <div class = "menu">
+                <a href = "javascript: ;">Asp编程</a> |
+                <a href = "javascript: ;">Php编程</a> |
+                <a href = "javascript: ;">.Net编程</a> |
+                <a href = "javascript: ;">Xml编程</a> |
+                <a href = "javascript: ;">Access</a> |
+                <a href = "javascript: ;">Mssql</a> |
+                <a href = "javascript: ;">Mysql</a>
+            </div>
+            <div class = "menu">
+                <a href = "javascript: ;">联盟动态</a> |
+                <a href = "javascript: ;">联盟介绍</a> |
+                <a href = "javascript: ;">联盟点评</a> |
+                <a href = "javascript: ;">网赚技巧</a>
+            </div>
+            <div class = "menu">
+                <a href = "javascript: ;">Web服务器</a> |
+                <a href = "javascript: ;">Ftp服务器</a> |
+                <a href = "javascript: ;">Mail服务器</a> |
+                <a href = "javascript: ;">Dns服务器</a> |
+                <a href = "javascript: ;">Win服务器</a> |
+                <a href = "javascript: ;">Linux服务器</a> |
+                <a href = "javascript: ;">安全防护</a> |
+                <a href = "javascript: ;">虚拟主机</a>
+            </div>
         </div>
     </body>
 </html>
